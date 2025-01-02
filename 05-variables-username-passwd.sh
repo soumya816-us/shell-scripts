@@ -2,8 +2,12 @@
 
 echo "please enter username and password"
 
-echo "enter your username::" read USERNAME 
+echo "enter your username::"
 
-echo "please enter your password::" read -s PASSWORD
+read USERNAME 
+
+echo "please enter your password::" 
+
+read -s PASSWORD
 
 echo " successfully entered username and password "
