@@ -1,6 +1,7 @@
 #!/bin/bash
 #--------special variables-----
-echo " All the Variables :: $@ "
+
+echo " All the Variables passed :: $@ "
 
 echo " Number of Variables:: $# "
 
@@ -16,4 +17,4 @@ echo " process id of current script :: $$ "
 
 sleep 60 &
 
-echo "process id of last command in backgroung :: $! "
+echo "process id of last command in background :: $! "
