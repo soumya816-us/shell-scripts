@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MOVIES={"PUSHPA" "RRR" "DEVARA"}
+MOVIES=("PUSHPA" "RRR" "DEVARA")
 
 echo "First Movie :: ${MOVIES[0]}"
 echo "Second Movie :: ${MOVIES[1]}"
