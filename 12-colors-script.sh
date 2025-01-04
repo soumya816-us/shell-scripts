@@ -11,10 +11,10 @@ VALIDATE(){
 
  if [ $1 -ne 0 ] # again checking installation is success or not
     then 
-        echo -e " $2 .... $R Failure "
+        echo -e " $2 .... $R Failure $N "
         exit 1
     else
-        echo -e " $2 .... $G Success "
+        echo -e " $2 .... $G Success $N"
     fi
 
 }
@@ -36,7 +36,7 @@ then
     VALIDATE $? "INSTALLING MYSQL"
    
 else
- echo -e " Mysql is Already .... $Y Installed"
+ echo -e " Mysql is Already .... $Y Installed $N"
  fi
 
 
@@ -47,5 +47,5 @@ then
     dnf install git -y
     VALIDATE $? "INSTALLING Git"
 else
-echo "Git is Already.... $Y Installed"
+echo "Git is Already.... $Y Installed $N"
 fi
