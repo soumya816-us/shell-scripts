@@ -6,6 +6,10 @@ USERID=$(id -u) # checking is it root user or not
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+LOGS_FOLDER="/var/log/shellscript-logs"
+LOGS_FILE=$(echo $0 | cut -d "." -f1 )
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOGS_FILE-$TIMESTAMP.log"
 
 VALIDATE(){
 
@@ -19,6 +23,7 @@ VALIDATE(){
 
 }
 
+echo "script started executing at :: $TIMESTAMP" &>>LOG_FILE_NAME
 
 #USERID=$(id -u) # checking is it root user or not
 
@@ -28,11 +33,12 @@ then
     exit 1 # other than exit 0 you can give any number "exit 0 means success"
 fi
 
-dnf list installed mysql# before installing mysql checking it is installed before or not
+dnf list installed mysql &>>LOG_FILE_NAME
+# before installing mysql checking it is installed before or not
 
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y
+    dnf install mysql -y &>>LOG_FILE_NAME 
     VALIDATE $? "INSTALLING MYSQL"
    
 else
@@ -40,11 +46,12 @@ else
  fi
 
 
-dnf list installed git # before installing git checking it is installed before or not
+dnf list installed git &>>LOG_FILE_NAME
+# before installing git checking it is installed before or not
 
 if [ $? -ne 0 ]
 then
-    dnf install git -y
+    dnf install git -y &>>LOG_FILE_NAME
     VALIDATE $? "INSTALLING Git"
 else
 echo "Git is Already.... $Y Installed $N"

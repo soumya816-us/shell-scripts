@@ -25,7 +25,7 @@ then
     exit 1 # other than exit 0 you can give any number "exit 0 means success"
 fi
 
-dnf list installed git # before installing mysql checking it is installed before or not
+dnf list installed mysql# before installing mysql checking it is installed before or not
 
 if [ $? -ne 0 ]
 then
