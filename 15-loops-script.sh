@@ -36,36 +36,12 @@ then
     exit 1 # other than exit 0 you can give any number "exit 0 means success"
 fi
 
-dnf list installed mysql &>>$LOG_FILE_NAME
-# before installing mysql checking it is installed before or not
-
-if [ $? -ne 0 ]
-then
-    dnf install mysql -y &>>$LOG_FILE_NAME 
-    VALIDATE $? "INSTALLING MYSQL"
-   
-else
- echo -e " Mysql is Already .... $Y Installed $N "
- fi
-
-
-dnf list installed git &>>$LOG_FILE_NAME
-# before installing git checking it is installed before or not
-
-if [ $? -ne 0 ]
-then
-    dnf install git -y &>>$LOG_FILE_NAME
-    VALIDATE $? "INSTALLING Git"
-else
-echo -e "Git is Already.... $Y Installed $N "
-fi
-
 for package in $@
 do 
     dnf list installed $package &>>$LOG_FILE_NAME
         if [ $? -ne 0 ]
         then
-            dnf install $package &>>$LOG_FILE_NAME
+            dnf install $package -y &>>$LOG_FILE_NAME
             VALIDATE $? "installing $package"
         else
             echo -e "$package is already $Y ... INSTALLED $N "
