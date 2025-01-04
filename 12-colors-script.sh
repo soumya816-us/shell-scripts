@@ -47,5 +47,5 @@ then
     dnf install git -y
     VALIDATE $? "INSTALLING Git"
 else
-echo "Git is Already.... $Y Installed $N"
+echo -e "Git is Already.... $Y Installed $N"
 fi
