@@ -65,7 +65,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 echo "Files are:: $FILES"
 
-if [ -n $FILES ] # -n means not empty
+if [ -n "$FILES" ] # -n means not empty
 then
     echo "Files are: $FILES"
 else
