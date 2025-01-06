@@ -44,7 +44,7 @@ then
     USAGE
 fi
 
-if [ ! -d $SOURCE_DIR ] # ! means false ...no souce dir and ! failure means possitive means true
+if [ ! -d "$SOURCE_DIR" ] # ! means false ...no souce dir and ! failure means possitive means true
 then
  
  echo -e "$SOURCE_DIR $R Does not exist.. $N please check"
@@ -52,7 +52,7 @@ then
 
 fi
 
-if [ ! -d $DEST_DIR ] # ! means false ...no souce dir and ! failure means possitive means true
+if [ ! -d "$DEST_DIR" ] # ! means false ...no souce dir and ! failure means possitive means true
 then
  
  echo -e "$DEST_DIR $R Does not exist.. $N please check "
