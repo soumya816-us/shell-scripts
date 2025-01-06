@@ -44,4 +44,19 @@ then
     USAGE
 fi
 
+if [ ! -d $SOURCE_DIR ] # ! means false ...no souce dir and ! failure means possitive means true
+then
+ 
+ echo -e "$SOURCE_DIR $R Does not exist.. $N please check"
+ exit 1
+
+fi
+
+if [ ! -d $DEST_DIR ] # ! means false ...no souce dir and ! failure means possitive means true
+then
+ 
+ echo -e "$DEST_DIR $R Does not exist.. $N please check "
+ exit 1
+
+fi
 echo "script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME
