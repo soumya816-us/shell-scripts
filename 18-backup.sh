@@ -56,7 +56,7 @@ if [ -n "$FILES" ] # -n means not empty ..true if there are files to zip
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
    if [ -f "$zip_file" ]
    then
         echo -e "Successfully created zipfile for files older than $DAYS"
@@ -64,9 +64,10 @@ then
         do
         echo "Deleting file: $file "
         rm -rf $file
-        done <<< $FILES_TO_DELETE
+        done <<< $FILES
    else
          echo -e "$R Error: $N Failed to create Zip file"
+         exit 1
    fi
 else
     echo "No files found older than $DAYS"
