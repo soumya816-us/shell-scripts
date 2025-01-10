@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR="/home/ec2-user/app-logs"
+
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -27,10 +27,4 @@ VALIDATE(){
 
 }
 
-CHECK_ROOT(){
-if [ $USERID -ne 0 ] 
-then 
-    echo "ERROR:: you must have sudo access to execute script"
-    exit 1 # other than exit 0 you can give any number "exit 0 means success"
-fi
-}
+
