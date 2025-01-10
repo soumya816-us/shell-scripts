@@ -11,6 +11,7 @@ do
     if [ $USAGE -ge $DISK_THRESHOULD]
     then
         MSG="High Disk Usage on partition: $PARTITION Usage is $Usage"
+        fi
 done <<< $DISK_USAGE
 
 echo "Message: $MSG"
