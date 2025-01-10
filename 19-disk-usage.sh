@@ -10,7 +10,7 @@ do
     echo "Partition: $PARTITION , Usage: $USAGE "
     if [ $USAGE -ge $DISK_THRESHOULD ]
     then
-        MSG="High Disk Usage on partition: $PARTITION Usage is $Usage"
+        MSG+="High Disk Usage on partition: $PARTITION Usage is $Usage"
         fi
 done <<< $DISK_USAGE
 
